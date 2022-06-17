@@ -5,7 +5,7 @@ import Buscar from '../screens/buscar';
 import Home from '../screens/home';
 import Perfil from '../screens/perfil';
 import Posteo from '../screens/posteo';
-import { FontAwesome, Foundation } from '@expo/vector-icons';
+import { FontAwesome, Founaation } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator ();
 
