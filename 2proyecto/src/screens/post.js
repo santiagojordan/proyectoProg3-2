@@ -4,12 +4,13 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 import {auth, db} from '../firebase/config';
 import firebase from 'firebase';
 
-class Posteo extends Component{
+class Post extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -56,10 +57,23 @@ class Posteo extends Component{
     }
 
 
+    borrar(){
+        this.props.showModal(this.props.dataPost.id)
+    }
+
+
     render(){
         // console.log(this.props);
         return(
                 <View style={styles.separator}>
+                    {this.props.inProfile?
+                    <TouchableOpacity onPress={()=> this.borrar()}>
+                        <Text>
+                            Borrar
+                        </Text>
+                    </TouchableOpacity>:null}
+                    <Image style={styles.image} source={{uri: this.props.dataPost.data.foto}}
+                    />
                     <Text>Post de: {this.props.dataPost.data.owner}</Text>
                     <Text>Texto del Post: {this.props.dataPost.data.description}</Text>
                      <Text>Cantidad de likes: {this.state.cantidadDeLikes}</Text>
@@ -89,7 +103,11 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         paddingHorizontal:20
     },
-    
+    image:{
+        height: 100,
+        width: 100,
+    }
 })
 
-export default Posteo;
+
+export default Post;
