@@ -104,5 +104,71 @@ class Perfil extends Component{
 
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#fdf7ff",
+        color: "#fdf7ff",
+    },
+    noFlatlist: {
+        width: "100%",
+        flex: 9,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    flatlist: {
+        overflow: "hidden",
+        width: "100%",
+        flex: 9,
+        flexDirection: "column",
+    },
+    icon: {
+        backgroundColor: "#40194f",
+        color: "white",
+        textAlign: "center",
+        padding: 7,
+        marginTop: 5,
+        borderRadius: 15,
+        width: "100%",
+    },
+    titulo: {
+        color: "#40194f",
+        textAlign: 'center',
+        fontSize: 40,
+        fontWeight: '600',
+        backgroundColor: '#cbb9d2',
+    },
+    contFlat: {
+        flex: 1,
+    },
+    background: {
+        backgroundColor: "#fdf7ff",
+        flex: 9,
+        flexDirection: "column",
+    },
+    username: {
+        textAlign: "left",
+        color: "cbb92d",
+        fontWeight: "600",
+        fontSize: 15,
+        padding: 5,
+    },
+    boldText: {
+        fontSize: "30",
+        fontWeight: "bold",
+        color: "#40194f",
+    },
+    paddingLeft: {
+        paddingLeft: "5px",
+    },
+    text: {
+        padding: 5,
+    },
+});
+
 
 export default Perfil;

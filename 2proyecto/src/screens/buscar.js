@@ -80,7 +80,7 @@ class Search extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     container:{
         flex:1,
         padding:10
@@ -110,6 +110,53 @@ const styles = StyleSheet.create({
     },
     buttonText:{
         color: '#fff'
+    }
+})*/
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fdf7ff",
+        color: "#fdf7ff",
+    },
+    form: {
+        flex: 1,
+        marginHorizontal: 20,
+    },
+    field: {
+        borderRadius: 15,
+        padding: 3,
+        marginBottom: 8,
+        width: '100%',
+        marginTop: 20,
+        backgroundColor: 'lightblue',
+    },
+    button: {
+        height: 30,
+        width: 30,
+        marginLeft: 10,
+    },
+    buttonText: {
+        color: '#fff'
+    },
+    titulo: {
+        color: '#40194f',
+        fontSize: 20,
+        fontWeight: '600',
+        marginTop: 20,
+        marginBottom: 20,
+        marginLeft: 20,
+    },
+    posts: {
+        marginTop: 60,
+    },
+    texto: {
+        color: '#40194f',
+        fontSize: 20,
+        fontWeight: '600',
+        marginBottom: 20,
+        marginLeft: 20,
+        textAlign: 'center',
     }
 })
 

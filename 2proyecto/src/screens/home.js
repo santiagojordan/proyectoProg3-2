@@ -56,9 +56,34 @@ class Home extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
     container:{
         flex:1
+    }
+}) */
+
+const styles = StyleSheet.create({
+    text: {
+        color: "#40194f",
+        textAlign: 'center',
+        fontSize: 40,
+        fontWeight: '600',
+        backgroundColor: '#cbb9d2',
+    },
+    container: {
+
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'lightgray',
+        color: "#616161",
+    },
+    flat: {
+    
+        width: "100%",
+        flex: 9,
+        flexDirection: 'column',
     }
 })
 
