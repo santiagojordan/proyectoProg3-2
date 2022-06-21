@@ -44,7 +44,7 @@ class Home extends Component {
         console.log(this.state);
         return(
                 <View style = {styles.container}>
-                    <Text>Posteos</Text>
+                    <Text style={styles.title} >Posteos</Text>
                     <FlatList 
                         data = {this.state.posts}
                         keyExtractor = {post => post.id}
@@ -75,6 +75,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightgray',
         color: "#616161",
     },
+    title: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        marginBottom: 30
+    }
 })
 
 

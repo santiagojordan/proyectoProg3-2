@@ -25,7 +25,7 @@ class Login extends Component {
                 <TextInput 
                     style={styles.field}
                     keyboardType='default'
-                    placeholder='password'
+                    placeholder='Password'
                     secureTextEntry={true}
                     onChangeText={text => this.setState({ password: text})}
                 />
@@ -33,7 +33,7 @@ class Login extends Component {
                     <Text style={ styles.buttonText}>Ingresar</Text>
                 </TouchableOpacity>   
                  <TouchableOpacity onPress={ ()=>this.props.navigation.navigate('Registro') }>
-                        <Text>No tengo cuenta</Text>
+                        <Text style={styles.noCuenta} >No tengo cuenta</Text>
                  </TouchableOpacity>
             
             </View>
@@ -47,25 +47,37 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     title:{
-        marginBottom:20
+        fontSize: 40,
+        fontWeight: 'bold',
+        padding: 25,
+
     },
     field:{
         borderColor: '#dcdcdc',
         borderWidth: 1,
         borderRadius: 2,
-        padding:3,
-        marginBottom:8
+        padding:10,
+        marginBottom:20,
+        backgroundColor: 'lightblue',
+        borderRadius: 10
 
     },
     button: {
         borderRadius: 2,
-        padding:3,
+        padding:10,
         backgroundColor: 'black',
-        width: 65,
+        width: 75,
+        borderRadius: 10
     },
     buttonText:{
         color: '#fff'
+    },
+    noCuenta:{
+        marginTop: 40,
+        fontWeight: 'bold',
+        textDecorationLine: 'underline'
     }
+
 })
 
 

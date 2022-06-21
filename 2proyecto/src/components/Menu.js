@@ -20,7 +20,7 @@ class Menu extends Component {
     render() {
         return (
             <Tab.Navigator>
-                <Tab.Screen 
+                <Tab.Screen style={styles.header}
                     name='Home' 
                     component={ Home }
                     options={
@@ -54,6 +54,13 @@ class Menu extends Component {
     }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    header:{
+        fontSize: 134,
+
+    }
+
+})
+
 
 export default Menu;

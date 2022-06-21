@@ -51,7 +51,7 @@ class Search extends Component {
         return(
                 <View>
                 {/* Si no hay resultados deben mostrar un mensaje al usuario. Puede ser un mensaje único o segmenteado: en caso de que el usuario no exista o si el usuario existe indicar que aún no tiene posteos. */}
-                    <Text>Posts del usuario: {this.state.whoIs}</Text>
+                    <Text style={styles.textito}>Posts del usuario: {this.state.whoIs}</Text>
                     <View style={styles.form}>
                         <TextInput 
                             style={styles.field}
@@ -97,18 +97,20 @@ const styles = StyleSheet.create({
         borderColor: '#dcdcdc',
         borderWidth: 1,
         borderRadius: 10,
-        padding:3,
+        padding:10,
         marginBottom:8,
-        width:'70%',
+        width:'80%',
+        height: 40,
         marginBottom: 20,
         lineHeight:60,
         backgroundColor: "lightblue",
     },
     button: {
         borderRadius: 10,
-        padding:3,
+        padding:10,
         backgroundColor: "#3483fa",
-        width:'29%',
+        width: 100,
+        height: 40,
         textAlign: 'center',
     },
     buttonText:{
@@ -118,6 +120,11 @@ const styles = StyleSheet.create({
     text: {
         margin: 200,
     },
+    textito:{
+        fontSize: 40,
+        fontWeight: 'bold',
+        padding: 25,
+    }
     
 })
 
