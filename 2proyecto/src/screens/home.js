@@ -46,10 +46,9 @@ class Home extends Component {
                 <View style = {styles.container}>
                     <Text style={styles.title} >Posteos</Text>
                     <FlatList 
-                        data = {this.state.posts}
-                        keyExtractor = {post => post.id}
-                        renderItem = { ({item}) => <Post dataPost={item} inProfile={false}
-                        {...this.props} />}
+                        data = {this.state.posts} //El array de datos que debe recorrer.
+                        keyExtractor = {post => post.id} //La clave unica para cada elemento renderizado.
+                        renderItem = { ({item}) => <Post dataPost={item} inProfile={false} {...this.props} />} //El componente a renderizar en cada iteracion.
                     />
                     
                 </View>
