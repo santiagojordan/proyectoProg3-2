@@ -63,16 +63,19 @@ class Post extends Component{
 
 
     render(){
-        // console.log(this.props);
+        console.log(this.props.dataPost);
         return(
-                <View style={styles.separator}>
+                <View style = {styles.separator}>
                     {this.props.inProfile?
-                    <TouchableOpacity onPress={()=> this.borrar()}>
+                    <TouchableOpacity onPress = {()=> this.borrar()}>
                         <Text>
                             Borrar
                         </Text>
                     </TouchableOpacity>:null}
-                    <Image style={styles.image} source={{uri: this.props.dataPost.data.foto}}
+                    <Image  style = {styles.image} 
+                            source = {
+                                {uri: this.props.dataPost.data.foto}
+                            }
                     />
                     <Text>Post de: {this.props.dataPost.data.owner}</Text>
                     <Text>Texto del Post: {this.props.dataPost.data.description}</Text>
