@@ -73,11 +73,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightgray',
         color: "#616161",
     },
-    flat: {
-        width: "100%",
-        flex: 9,
-        flexDirection: 'column',
-    }
 })
+
 
 export default Home;
