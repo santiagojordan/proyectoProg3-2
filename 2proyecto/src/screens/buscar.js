@@ -7,7 +7,9 @@ import { View,
          StyleSheet, 
          ActivityIndicator,
          FlatList, 
-         Image } from 'react-native';
+         Image 
+} from 'react-native';
+
 import Post from './post';
 
 class Search extends Component {
@@ -54,7 +56,7 @@ class Search extends Component {
                         <TextInput 
                             style={styles.field}
                             keyboardType='default'
-                            placeholder='email a buscar...'
+                            placeholder='Email a buscar...'
                             value={this.state.email}
                             onChangeText={text => this.setState({ email: text})}
                         />  
@@ -80,10 +82,10 @@ class Search extends Component {
     }
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         flex:1,
-        padding:10
+        padding:10,
     },
     form:{
         flex:1,
@@ -94,70 +96,30 @@ class Search extends Component {
     field:{
         borderColor: '#dcdcdc',
         borderWidth: 1,
-        borderRadius: 2,
+        borderRadius: 10,
         padding:3,
         marginBottom:8,
         width:'70%',
-        marginBottom: 0,
-        lineHeight:40,
+        marginBottom: 20,
+        lineHeight:60,
+        backgroundColor: "lightblue",
     },
     button: {
-        borderRadius: 2,
+        borderRadius: 10,
         padding:3,
-        backgroundColor: 'green',
+        backgroundColor: "#3483fa",
         width:'29%',
         textAlign: 'center',
     },
     buttonText:{
-        color: '#fff'
-    }
-})*/
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fdf7ff",
-        color: "#fdf7ff",
+        color: "#fff",
+        fontFamily: "Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif",
     },
-    form: {
-        flex: 1,
-        marginHorizontal: 20,
+    text: {
+        margin: 200,
     },
-    field: {
-        borderRadius: 15,
-        padding: 3,
-        marginBottom: 8,
-        width: '100%',
-        marginTop: 20,
-        backgroundColor: 'lightblue',
-    },
-    button: {
-        height: 30,
-        width: 30,
-        marginLeft: 10,
-    },
-    buttonText: {
-        color: '#fff'
-    },
-    titulo: {
-        color: '#40194f',
-        fontSize: 20,
-        fontWeight: '600',
-        marginTop: 20,
-        marginBottom: 20,
-        marginLeft: 20,
-    },
-    posts: {
-        marginTop: 60,
-    },
-    texto: {
-        color: '#40194f',
-        fontSize: 20,
-        fontWeight: '600',
-        marginBottom: 20,
-        marginLeft: 20,
-        textAlign: 'center',
-    }
+    
 })
+
 
 export default Search;

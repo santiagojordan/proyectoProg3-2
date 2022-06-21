@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    StyleSheet,
-    FlatList
+import { View,
+        Text,
+        TextInput,
+        TouchableOpacity,
+        StyleSheet,
+        FlatList,
 } from 'react-native';
+
 import {auth, db} from '../firebase/config';
 import firebase from 'firebase';
 
@@ -54,8 +54,8 @@ class Comments extends Component{
     render(){
         // console.log(this.props);
         return(
-                <View>
-                    <Text> Comentarios</Text>
+                <View style = {styles.container}>
+                    <Text style = {styles.title}> Comentarios</Text>
                     {/* Renderizar la lista de comentarios del posteo */}
                     <FlatList 
                         data={this.state.comments}
@@ -85,24 +85,34 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     title:{
-        marginBottom:20
+        marginBottom:20,
+        color: "#40194f",
+        textAlign: 'center',
+        fontSize: 40,
+        fontWeight: '600',
+        backgroundColor: '#cbb9d2',
     },
     field:{
         borderColor: '#dcdcdc',
         borderWidth: 1,
-        borderRadius: 2,
+        borderRadius: 15,
         padding:3,
-        marginBottom:8
+        marginBottom:8,
+        margintop: 10,
+        width: "100%",
 
     },
     button: {
-        borderRadius: 2,
+        borderRadius: 15,
         padding:3,
         backgroundColor: 'green',
+        height: 25,
     },
     buttonText:{
-        color: '#fff'
+        color: '#fff',
+        marginLeft: 10,
     }
 })
+
 
 export default Comments;

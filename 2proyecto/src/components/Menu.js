@@ -41,13 +41,13 @@ class Menu extends Component {
                         { tabBarIcon: () => <FontAwesome name="search" size={24} color="black" /> }
                     }
                 />                
-                <Tab.Screen 
-                name='Perfil' 
-                component={Perfil}
-                options={
-                    { tabBarIcon: () => <FontAwesome name="user" size={24} color="black" /> }
-                }
-                initialParams={{logout: ()=>this.props.route.params.logout()}}
+                    <Tab.Screen 
+                    name='Perfil' 
+                    component={Perfil}
+                    options={
+                        { tabBarIcon: () => <FontAwesome name="user" size={24} color="black" /> }
+                    }
+                    initialParams={{logout: ()=>this.props.route.params.logout()}}
                 />
             </Tab.Navigator>
         );
