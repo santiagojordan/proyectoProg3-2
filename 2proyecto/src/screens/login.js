@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {View, 
-        StyleSheet, 
-        TouchableOpacity, 
-        Text, 
-        TextInput,
+import {View, StyleSheet,   TouchableOpacity,  Text, TextInput,
 } from 'react-native';
 
 class Login extends Component {
@@ -16,14 +12,13 @@ class Login extends Component {
         }
     }
 
-    render(){
-        //Falta implementar for de login y el método que viene de mainNavigation 
+    render(){ 
         return(
                 <View style={styles.container}>
                 <Text style={styles.title}>Login</Text>
                 <TextInput 
                     style={styles.field}
-                    keyboardType='default'
+                    keyboardType='email-address'
                     placeholder='Email'
                     onChangeText={text => this.setState({ email: text})}
                 />
