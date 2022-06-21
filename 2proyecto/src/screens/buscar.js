@@ -7,7 +7,9 @@ import { View,
          StyleSheet, 
          ActivityIndicator,
          FlatList, 
-         Image } from 'react-native';
+         Image 
+} from 'react-native';
+
 import Post from './post';
 
 class Search extends Component {
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
         padding:3,
         marginBottom:8,
         width:'70%',
-        marginBottom: 8,
+        marginBottom: 20,
         lineHeight:60,
         backgroundColor: "lightblue",
     },
@@ -115,54 +117,9 @@ const styles = StyleSheet.create({
     },
     text: {
         margin: 200,
-    }
+    },
+    
 })
 
-/*const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fdf7ff",
-        color: "#fdf7ff",
-    },
-    form: {
-        flex: 1,
-        marginHorizontal: 20,
-    },
-    field: {
-        borderRadius: 15,
-        padding: 3,
-        marginBottom: 8,
-        width: '100%',
-        marginTop: 20,
-        backgroundColor: 'lightblue',
-    },
-    button: {
-        height: 30,
-        width: 30,
-        marginLeft: 10,
-    },
-    buttonText: {
-        color: '#fff'
-    },
-    titulo: {
-        color: '#40194f',
-        fontSize: 20,
-        fontWeight: '600',
-        marginTop: 20,
-        marginBottom: 20,
-        marginLeft: 20,
-    },
-    posts: {
-        marginTop: 60,
-    },
-    texto: {
-        color: '#40194f',
-        fontSize: 20,
-        fontWeight: '600',
-        marginBottom: 20,
-        marginLeft: 20,
-        textAlign: 'center',
-    }
-})*/
 
 export default Search;

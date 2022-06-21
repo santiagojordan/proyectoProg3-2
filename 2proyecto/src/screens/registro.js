@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import {View, StyleSheet, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, 
+        StyleSheet, 
+        Text, 
+        TextInput, 
+        TouchableOpacity
+} from 'react-native';
 
 class Registro extends Component {
     constructor(props){

@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import { db, auth } from '../firebase/config';
 import { View,
          Text,
          TouchableOpacity, 
          StyleSheet, 
          ActivityIndicator,
          FlatList, 
-         Image } from 'react-native';
+         Image,
+} from 'react-native';
+
+import { db, auth } from '../firebase/config';
 import Post from './post';
 
 class Home extends Component {
     constructor(props){
         super(props);
         this.state={
-            posts:[]
+            posts:[],
         }
     }
     
@@ -24,12 +26,12 @@ class Home extends Component {
                 docs.forEach( oneDoc => {
                     posts.push({
                         id: oneDoc.id,
-                        data: oneDoc.data()
+                        data: oneDoc.data(),
                     })
                 })
 
                 this.setState({
-                    posts: posts
+                    posts: posts,
                 })
             }
         )

@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import {View, StyleSheet, TouchableOpacity, Text, TextInput} from 'react-native';
+import {View, 
+        StyleSheet, 
+        TouchableOpacity, 
+        Text, 
+        TextInput,
+} from 'react-native';
 
 class Login extends Component {
 

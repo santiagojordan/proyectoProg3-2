@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    StyleSheet
+import {View,
+        Text,
+        TextInput,
+        TouchableOpacity,
+        StyleSheet,
 } from 'react-native';
+
 import {auth, db} from '../firebase/config';
 import MyCamera from '../components/MyCamera';
 
