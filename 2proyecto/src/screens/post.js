@@ -83,10 +83,10 @@ class Post extends Component{
                     {
                         this.state.myLike ?
                         <TouchableOpacity onPress={()=> this.unLike()}>
-                            <Text>Quitar Like</Text>
+                            <Text style={styles.dislike} >Quitar Like</Text>
                         </TouchableOpacity> :
                         <TouchableOpacity onPress={()=> this.like()}>
-                            <Text>Like</Text>
+                            <Text style={styles.like} >Like</Text>
                         </TouchableOpacity>                
                     }
                     <TouchableOpacity style={styles.comment} onPress={ () => this.props.navigation.navigate('Comentarios', { id: this.props.dataPost.id})} > 
@@ -126,6 +126,16 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignContent: 'left'
 
+    },
+    like:{
+        fontSize: 18,
+        alignContent: 'left',
+        color: 'green'
+    },
+    dislike:{
+        fontSize: 18,
+        alignContent: 'left',
+        color: 'red'
     }
 
 

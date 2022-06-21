@@ -69,9 +69,9 @@ class Perfil extends Component{
         //Incluir en el render un ToucheableOpacity para ejecutar el método de logout que viene del padre. ¿Quién es el padre?
         return(
                 <View style = {styles.container}>
-                    <Text style = {styles.title}> Mi Perfil</Text>
+                    <Text style = {styles.title}> Mi Perfil </Text>
                     <TouchableOpacity onPress={()=>this.props.route.params.logout()}>
-                        <Text>Logout</Text>
+                        <Text style = {styles.logout} >Logout</Text>
                     </TouchableOpacity>
                     <FlatList 
                         data={this.state.posts}
@@ -135,12 +135,11 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         width: "100%",
     },
-    titulo: {
-        color: "#40194f",
+    title: {
         textAlign: 'center',
         fontSize: 40,
-        fontWeight: '600',
-        backgroundColor: '#cbb9d2',
+        fontWeight: 'bold',
+        padding: 25,
     },
     contFlat: {
         flex: 1,
@@ -168,6 +167,12 @@ const styles = StyleSheet.create({
     text: {
         padding: 5,
     },
+    logout:{
+        marginTop: 10,
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',
+        alignContent: 'left'
+    }
 });
 
 
