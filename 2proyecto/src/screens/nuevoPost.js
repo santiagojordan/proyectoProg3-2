@@ -53,11 +53,11 @@ class NewPost extends Component{
                     <MyCamera onImageUpload={url => this.onImageUpload(url)}/> 
                 :
                 <View style={styles.container}>
-                    <Text style={styles.title}>Nuevo Post</Text>
+                    <Text style={styles.title}>Nuevo Posteo</Text>
                     <TextInput 
                         style={styles.field}
                         keyboardType='default'
-                        placeholder='description'
+                        placeholder='Descripción...'
                         onChangeText={text => this.setState({ description: text})}
                         multiline
                     />
@@ -75,9 +75,9 @@ class NewPost extends Component{
 
 const styles = StyleSheet.create({
     container:{
-        paddingHorizontal:10,
+        paddingHorizontal: 10,
         marginTop: 10,
-        height:'100%'
+        height:"100%",
     },
     title:{
         marginBottom:20
@@ -85,18 +85,21 @@ const styles = StyleSheet.create({
     field:{
         borderColor: '#dcdcdc',
         borderWidth: 1,
-        borderRadius: 2,
-        padding:3,
-        marginBottom:8
+        borderRadius: 10,
+        padding: 3,
+        marginBottom: 8,
+        backgroundColor: "lightblue",
     },
     button: {
-        borderRadius: 2,
+        borderRadius: 10,
         padding:3,
-        backgroundColor: 'green',
+        backgroundColor: "#3483fa",
+        width: "10%",
     },
     buttonText:{
         color: '#fff'
     }
 })
+
 
 export default NewPost;

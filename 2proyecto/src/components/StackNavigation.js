@@ -8,6 +8,7 @@ const Stack = createNativeStackNavigator ()
 import Login from "../screens/login";
 import Registro from "../screens/registro";
 import Menu from "./Menu";
+import Comments from "../screens/comments";
 import {auth, db} from "../firebase/config"
 
 class StackNavigation extends Component {
@@ -87,13 +88,21 @@ class StackNavigation extends Component {
             <NavigationContainer>
                 <Stack.Navigator>
                     {this.state.loggedIn?
+
                     <Stack.Group>
                         <Stack.Screen
                         name = "Menu" component={Menu}
                         options = {{headerShown: false}}
                         initialParams={{logout: ()=>this.logout()}}/>
+
+                        <Stack.Screen
+                        name = "Comments"
+                        component={Comments}
+                        />
                     </Stack.Group>
+
                     :
+
                     <Stack.Group>
                          <Stack.Screen
                     name="Login" component={Login}
@@ -104,6 +113,7 @@ class StackNavigation extends Component {
                     name="Registro" component={Registro}
                     initialParams = { {register: (mail, pass, userName)=>this.register(mail, pass, userName)}}/>
                     </Stack.Group>
+                    
                     }
                    
                 </Stack.Navigator>

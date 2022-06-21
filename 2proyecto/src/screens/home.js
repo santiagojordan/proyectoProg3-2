@@ -39,13 +39,13 @@ class Home extends Component {
 
 
     render(){
-        // console.log(this.state);
+        console.log(this.state);
         return(
-                <View style={styles.container}>
+                <View style = {styles.container}>
                     <Text>Posteos</Text>
                     <FlatList 
-                        data={this.state.posts}
-                        keyExtractor={post => post.id}
+                        data = {this.state.posts}
+                        keyExtractor = {post => post.id}
                         renderItem = { ({item}) => <Post dataPost={item} inProfile={false}
                         {...this.props} />}
                     />
@@ -56,11 +56,6 @@ class Home extends Component {
     }
 }
 
-/* const styles = StyleSheet.create({
-    container:{
-        flex:1
-    }
-}) */
 
 const styles = StyleSheet.create({
     text: {
@@ -71,7 +66,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#cbb9d2',
     },
     container: {
-
         flex: 1,
         flexDirection: "column",
         justifyContent: "center",
@@ -80,7 +74,6 @@ const styles = StyleSheet.create({
         color: "#616161",
     },
     flat: {
-    
         width: "100%",
         flex: 9,
         flexDirection: 'column',
