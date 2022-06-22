@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
-import { db, auth } from '../firebase/config';
+import React, {Component} from 'react'; 
+import { db, auth } from '../firebase/config'; 
 import { View,
          Text,
          TextInput,
          TouchableOpacity, 
          StyleSheet, 
-         ActivityIndicator,
          FlatList, 
-         Image 
 } from 'react-native';
 
-import Post from './post';
+import Post from './post'; 
 
 class Search extends Component {
     constructor(props){
@@ -18,15 +16,15 @@ class Search extends Component {
         this.state={
             posts:[],
             email:'',
-            whoIs:'',
+            whoIs:'', 
         }
     }
     
-    // Obtener información a partir de una búsqueda.
+    
     search(email){ 
-        db.collection('posts').where('owner', '==', email).onSnapshot(
-            docs => {
-                let posts = [];
+        db.collection('posts').where('owner', '==', email).onSnapshot( 
+            docs => {                                 
+                let posts = [];                                        
                 docs.forEach( oneDoc => {
                     posts.push({
                         id: oneDoc.id,
@@ -37,7 +35,7 @@ class Search extends Component {
                 this.setState({
                     posts: posts,
                     email:'',
-                    whoIs:email,
+                    whoIs: email,
                 })
             }
         )
@@ -46,32 +44,29 @@ class Search extends Component {
     }
 
 
-    render(){
-        // console.log(this.state);
+    render(){ 
         return(
-                <View>
-                {/* Si no hay resultados deben mostrar un mensaje al usuario. Puede ser un mensaje único o segmenteado: en caso de que el usuario no exista o si el usuario existe indicar que aún no tiene posteos. */}
-                    <Text style={styles.textito}>Posts del usuario: {this.state.whoIs}</Text>
+                <View style={styles.container}>
+                    <Text style={styles.text} >Posteos del usuario: {this.state.whoIs}</Text>
                     <View style={styles.form}>
                         <TextInput 
                             style={styles.field}
                             keyboardType='default'
                             placeholder='Email a buscar...'
                             value={this.state.email}
-                            onChangeText={text => this.setState({ email: text})}
-                        />  
+                            onChangeText={text => this.setState({ email: text})} 
+                        />
                         <TouchableOpacity
                             style={styles.button} 
-                            onPress={()=>this.search(this.state.email)}
-                            //👇 Les dejo un dato sorpresa para los que llegaron hasta acá: así se deshabilita un touchable opacity
-                            disabled= {this.state.email == '' ? true : false }
-                            >
-                            <Text style={ styles.buttonText}>Buscar</Text>
-                        </TouchableOpacity>                         
+                            onPress={()=>this.search(this.state.email)} 
+                            disabled = {this.state.email == '' ? true : false } 
+                        >
+                        <Text style={ styles.buttonText}>Buscar</Text>
+                        </TouchableOpacity>
                     </View>
-                    <FlatList 
-                        data={this.state.posts}
-                        keyExtractor={post => post.id}
+                    <FlatList style={styles.listaPosteos} 
+                        data={this.state.posts} 
+                        keyExtractor={post => post.id} 
                         renderItem = { ({item}) => <Post dataPost={item} 
                         {...this.props} />}
                     />
@@ -84,11 +79,14 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
-        padding:10,
+        flex: 1, 
+        padding: 10,
+    },
+    listaPosteos:{
+        marginTop: 100,
     },
     form:{
-        flex:1,
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal:20,
@@ -105,7 +103,7 @@ const styles = StyleSheet.create({
         lineHeight:60,
         backgroundColor: "lightblue",
     },
-    button: {
+    button:{
         borderRadius: 10,
         padding:10,
         backgroundColor: "#3483fa",
@@ -117,14 +115,11 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontFamily: "Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif",
     },
-    text: {
-        margin: 200,
-    },
-    textito:{
+    text:{
         fontSize: 40,
         fontWeight: 'bold',
         padding: 25,
-    }
+    },
     
 })
 
