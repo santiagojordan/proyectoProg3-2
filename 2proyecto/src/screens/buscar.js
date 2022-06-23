@@ -8,7 +8,7 @@ import { View,
          FlatList, 
 } from 'react-native';
 
-import Post from './post'; 
+import Post from './post';
 
 class Search extends Component {
     constructor(props){
@@ -20,19 +20,20 @@ class Search extends Component {
         }
     }
     
-    
+ 
     search(email){ 
-        db.collection('posts').where('owner', '==', email).onSnapshot( 
-            docs => {                                 
+        db.collection('posts').where('owner', '==', email).onSnapshot(
+            docs => {                        
                 let posts = [];                                        
                 docs.forEach( oneDoc => {
+
                     posts.push({
                         id: oneDoc.id,
                         data: oneDoc.data()
                     })
                 })
 
-                this.setState({
+                this.setState({ 
                     posts: posts,
                     email:'',
                     whoIs: email,
@@ -55,11 +56,11 @@ class Search extends Component {
                             placeholder='Email a buscar...'
                             value={this.state.email}
                             onChangeText={text => this.setState({ email: text})} 
-                        />
+                        />                                                      
                         <TouchableOpacity
                             style={styles.button} 
-                            onPress={()=>this.search(this.state.email)} 
-                            disabled = {this.state.email == '' ? true : false } 
+                            onPress={()=>this.search(this.state.email)}
+                            disabled = {this.state.email == '' ? true : false }
                         >
                         <Text style={ styles.buttonText}>Buscar</Text>
                         </TouchableOpacity>
@@ -68,7 +69,7 @@ class Search extends Component {
                         data={this.state.posts} 
                         keyExtractor={post => post.id} 
                         renderItem = { ({item}) => <Post dataPost={item} 
-                        {...this.props} />}
+                        {...this.props} />} 
                     />
                     
                 </View>
@@ -77,7 +78,7 @@ class Search extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
     container:{
         flex: 1, 
         padding: 10,

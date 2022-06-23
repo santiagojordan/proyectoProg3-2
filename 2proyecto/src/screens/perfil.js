@@ -66,7 +66,6 @@ class Perfil extends Component{
 
     render(){
         console.log(this.props);
-        //Incluir en el render un ToucheableOpacity para ejecutar el método de logout que viene del padre. ¿Quién es el padre?
         return(
                 <View style = {styles.container}>
                     <Text style = {styles.title}> Mi Perfil </Text>
@@ -110,15 +109,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#fdf7ff",
+        backgroundColor: "lightgrey",
         color: "#fdf7ff",
-    },
-    noFlatlist: {
-        width: "100%",
-        flex: 9,
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
     },
     flatlist: {
         overflow: "hidden",
@@ -126,53 +118,21 @@ const styles = StyleSheet.create({
         flex: 9,
         flexDirection: "column",
     },
-    icon: {
-        backgroundColor: "#40194f",
-        color: "white",
-        textAlign: "center",
-        padding: 7,
-        marginTop: 5,
-        borderRadius: 15,
-        width: "100%",
-    },
     title: {
         textAlign: 'center',
         fontSize: 40,
         fontWeight: 'bold',
         padding: 25,
     },
-    contFlat: {
-        flex: 1,
-    },
-    background: {
-        backgroundColor: "#fdf7ff",
-        flex: 9,
-        flexDirection: "column",
-    },
-    username: {
-        textAlign: "left",
-        color: "cbb92d",
-        fontWeight: "600",
-        fontSize: 15,
-        padding: 5,
-    },
-    boldText: {
-        fontSize: "30",
-        fontWeight: "bold",
-        color: "#40194f",
-    },
-    paddingLeft: {
-        paddingLeft: "5px",
-    },
     text: {
         padding: 5,
     },
     logout:{
-        marginTop: 10,
+        fontSize: 20,
+        padding: 10,
         fontWeight: 'bold',
         textDecorationLine: 'underline',
-        alignContent: 'left'
-    }
+    },
 });
 
 

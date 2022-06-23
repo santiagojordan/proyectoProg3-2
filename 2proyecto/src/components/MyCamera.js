@@ -32,11 +32,9 @@ class MyCamera extends Component{
     }
 
     sacarFoto(){
-        //usar un método de la cámara para sacar la foto.abs
         this.metodosDeCamara.takePictureAsync()
             .then(  photo => {
                 this.setState({
-                    //obtener la url temporal para guardarla en un estado.
                     url:photo.uri,
                     showCamera: false,
                 })
@@ -56,7 +54,7 @@ class MyCamera extends Component{
                         .then( () => {
                             ref.getDownloadURL()
                             .then( url => {
-                                this.props.onImageUpload(url) //tiene que venir del padre.
+                                this.props.onImageUpload(url)
                             })
                             .catch(error => console.log(error))
                         })
@@ -67,9 +65,6 @@ class MyCamera extends Component{
 
     }
 
-    eliminarPreview(){
-        //Todo para alumnos.
-    }
 
 
     render(){

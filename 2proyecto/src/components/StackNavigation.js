@@ -21,9 +21,7 @@ class StackNavigation extends Component {
 
 
     componentDidMount(){
-        //chequear que el usuario esté logueado.
       auth.onAuthStateChanged(user => {
-           // Si el usuario está logueado, cambiar el estado loggedIn: true
            if(user){
                this.setState({
                    loggedIn:true
@@ -34,8 +32,6 @@ class StackNavigation extends Component {
 
 
    login(mail, pass){
-       //Debería loguear en Firebase y cambiar el estado loggedIn: true
-       //Debe pasar como método a el componente login
        auth.signInWithEmailAndPassword(mail, pass)
            .then(response => this.setState({
                loggedIn:true
@@ -45,23 +41,16 @@ class StackNavigation extends Component {
    }
 
    register(mail, pass, userName){
-       //Debería registrar en Firebase y cambiar el estado loggedIn: true
-       //Debe pasar como método a el componente register
-       //console.log(this.state)
-       //Colocar el método de registración de Firebase
        auth.createUserWithEmailAndPassword(mail, pass)
            .then( responseRegister => {
                console.log(responseRegister); 
-               //Guardar documento en colección de usuarios.
                db.collection('users').add({
                            email: mail,
                            userName: userName,
                            createdAt: Date.now(),
                        })
-                       // .then( responseUsers => this.setState({
-                       //     loggedIn:true,
-                       // }))
-                       .thne( res => console.log(res))
+                       
+                       .then( res => console.log(res))
                        .catch(error => console.log(error) )
 
                    })
@@ -74,7 +63,6 @@ class StackNavigation extends Component {
    }
    
    logout(){
-       //Debe pasar como método a el componente Porfile
        auth.signOut()
            .then( response => this.setState({
                loggedIn: false
@@ -121,5 +109,6 @@ class StackNavigation extends Component {
         );
     }
 }
+
 
 export default StackNavigation
