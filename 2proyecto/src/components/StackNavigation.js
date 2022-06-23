@@ -84,7 +84,7 @@ class StackNavigation extends Component {
                         initialParams={{logout: ()=>this.logout()}}/>
 
                         <Stack.Screen
-                        name = "Comments"
+                        name = "Comentarios"
                         component={Comments}
                         />
                     </Stack.Group>
